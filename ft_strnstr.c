@@ -6,14 +6,13 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 19:40:19 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/05 22:02:36 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 11:46:06 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-char *ft_strnstr(const char *big, const char *little, size_t1 len)
+char	*ft_strnstr(const char *big, const char *little, size_t1 len)
 {
 	unsigned int	i;
 	unsigned int	i_fnd;
@@ -40,12 +39,12 @@ char *ft_strnstr(const char *big, const char *little, size_t1 len)
 	return (0);
 }
 
-#include <stdio.h>
-int main ()
-{
-	printf("%s\n",ft_strnstr("aB","B",2));
-	printf("%s\n",ft_strnstr("aaaaaBaac","Baa",4));
-	printf("%s\n",ft_strnstr("aBaac","Baa",4));
-	printf("%s\n",ft_strnstr("aBsdvf2454","45",10));
-	return (0);
-}
+// #include <stdio.h>
+// int main ()
+// {
+// 	printf("%s\n",ft_strnstr("aB","B",2));
+// 	printf("%s\n",ft_strnstr("aaaaaBaac","Baa",4));
+// 	printf("%s\n",ft_strnstr("aBaac","Baa",4));
+// 	printf("%s\n",ft_strnstr("aBsdvf2454","45",10));
+// 	return (0);
+// }
