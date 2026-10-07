@@ -6,7 +6,7 @@
 #    By: adogru <adogru@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/30 18:09:52 by adogru            #+#    #+#              #
-#    Updated: 2026/10/07 18:11:57 by adogru           ###   ########.fr        #
+#    Updated: 2026/10/07 19:47:57 by adogru           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,12 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror 
 
 # Source files and Object files
-SRCS = ft_isalpha.c  ft_memchr.c   ft_memset.c   ft_strncmp.c  ft_toupper.c   ft_atoi.c	ft_isascii.c  ft_memcmp.c   ft_strchr.c   ft_strnstr.c \
-ft_bzero.c    ft_isdigit.c  ft_memcpy.c   ft_strlcat.c  ft_strrchr.c  \
-ft_isalnum.c  ft_isprint.c  ft_memmove.c  ft_strlcpy.c  ft_tolower.c 
+SRCS = ft_isalpha.c  ft_memchr.c   ft_memset.c   ft_strncmp.c  ft_toupper.c \
+ft_atoi.c	ft_isascii.c  ft_memcmp.c   ft_strchr.c   ft_strnstr.c \
+ft_bzero.c    ft_isdigit.c  ft_memcpy.c   ft_strlcat.c  ft_strrchr.c \
+ft_isalnum.c  ft_isprint.c  ft_memmove.c  ft_strlcpy.c  ft_tolower.c \
+ft_strlen.c
+
 OBJS = $(SRCS:.c=.o)
 HEADER = libft.h
 
@@ -26,37 +29,22 @@ HEADER = libft.h
 all: $(NAME)
 
 # Link object files to create the executable
-$(NAME): $(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
-
-# Compile .c files
-ft_isalpha.c: $(HEADER)
-ft_memchr.c: $(HEADER)
-ft_memset.c: $(HEADER)
-ft_strncmp.c: $(HEADER)
-ft_toupper.c: $(HEADER)
-ft_atoi.c: $(HEADER)
-ft_isascii.c: $(HEADER)
-ft_memcmp.c: $(HEADER)
-ft_strchr.c: $(HEADER)
-ft_strnstr.c: $(HEADER)
-ft_bzero.c: $(HEADER)
-ft_isdigit.c: $(HEADER)
-ft_memcpy.c: $(HEADER)
-ft_strlcat.c: $(HEADER)
-ft_strrchr.c: $(HEADER)
-ft_isalnum.c: $(HEADER)
-ft_isprint.c: $(HEADER)
-ft_memmove.c: $(HEADER)
-ft_strlcpy.c: $(HEADER)
-ft_tolower.c: $(HEADER)
+# $(NAME): $(OBJS)
+#	$(CC) $(OBJS) -o $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 # Generic rule for compiling source files to object files
-%.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+# '$@' The file name of the target of the rule. If the target is an archive member, then
+# '$@' is the name of the archive file. In this case libft.a Chapter (10.5.3 Automatic variables)
+# '$<' The name of the first prerequisite. If the target got its recipe from an implicit
+#rule, this will be the first prerequisite added by the implicit rule (see Chapter 10
+# [Implicit Rules], page 121).
+#
+
+%.o: %.c #$(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@ 
 
 clean:
 	rm -f $(OBJS)
@@ -64,6 +52,8 @@ clean:
 # Clean up build artifacts
 fclean: clean
 	rm -f $(NAME)
+
+re:
 
 # Phony targets
 .PHONY: all fclean

@@ -6,17 +6,17 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 14:54:00 by adogru            #+#    #+#             */
-/*   Updated: 2026/08/01 19:21:58 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:21:53 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n);
-int	if_eos(char *s, unsigned int index);
-int	char_cmp(char c1, char c2);
+int			ft_strncmp(char *s1, char *s2, t_size_t n);
+static int	if_eos(char *s, unsigned int index);
+static int	char_cmp(char c1, char c2);
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, t_size_t n)
 {
 	unsigned int	index;
 	int				buf;
@@ -43,7 +43,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	return (0);
 }
 
-int	char_cmp(char c1, char c2)
+static int	char_cmp(char c1, char c2)
 {
 	if (c1 == '\0' || c2 > c1)
 	{
@@ -59,7 +59,7 @@ int	char_cmp(char c1, char c2)
 	}
 }
 
-int	if_eos(char *s, unsigned int index)
+static int	if_eos(char *s, unsigned int index)
 {
 	return (s[index] == '\0');
 }

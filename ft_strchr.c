@@ -6,9 +6,11 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 22:05:05 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/01 22:20:01 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:17:13 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

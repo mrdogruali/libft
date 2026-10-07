@@ -6,13 +6,13 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 20:41:24 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/07 13:16:09 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 21:07:33 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> 
+#include "libft.h"
 
-int	atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int	min_i;
 	int	total;

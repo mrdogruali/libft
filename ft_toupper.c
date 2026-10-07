@@ -6,11 +6,15 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 22:00:47 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/01 22:13:39 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 21:18:12 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_toupper(int c)
 {
-	return (c - 32);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

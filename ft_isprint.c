@@ -6,20 +6,18 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 20:05:53 by adogru            #+#    #+#             */
-/*   Updated: 2026/09/29 10:34:32 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 19:36:40 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(char str)
 {
 	if (str >= 32 && str <= 126)
-	{
-	}
+		return (1);
 	else
-	{
 		return (0);
-	}
-	return (1);
 }
 
 // #include <unistd.h>

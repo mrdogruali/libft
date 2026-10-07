@@ -6,20 +6,18 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 19:31:03 by adogru            #+#    #+#             */
-/*   Updated: 2026/09/28 19:33:47 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:44:08 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(char str)
 {
 	if (str >= '0' && str <= '9' )
-	{
-	}
+		return (1);
 	else
-	{
 		return (0);
-	}
-	return (1);
 }
 
 // #include <unistd.h>

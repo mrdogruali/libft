@@ -6,11 +6,13 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 20:19:58 by adogru            #+#    #+#             */
-/*   Updated: 2026/09/29 17:19:01 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:17:10 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned int n)
+#include "libft.h"
+
+void	*ft_memset(void *s, int c, t_size_t n)
 {
 	unsigned int	i;
 	char			c_cast;

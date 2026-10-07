@@ -6,11 +6,13 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 19:40:19 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/07 14:20:47 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:17:42 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(const char *big, const char *little, long unsigned int len)
+#include "libft.h"
+
+char	*ft_strnstr(const char *big, const char *little, t_size_t len)
 {
 	unsigned int	i;
 	unsigned int	i_fnd;

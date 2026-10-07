@@ -6,11 +6,13 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 18:54:12 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/01 19:36:27 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:17:07 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, unsigned int n)
+#include "libft.h"
+
+void	*ft_memmove(void *dest, const void *src, t_size_t n)
 {
 	unsigned int	i;
 	char			*dest_cast;

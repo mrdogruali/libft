@@ -6,11 +6,13 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 22:54:55 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/05 19:16:11 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:29:58 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(const void *s, int c, unsigned long int n)
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, t_size_t n)
 {
 	unsigned long	i;
 	char			*cast_s;
@@ -20,7 +22,7 @@ void	*ft_memchr(const void *s, int c, unsigned long int n)
 	while (cast_s[i] != c && cast_s[i] != '\0' && n > i)
 		i++;
 	if (cast_s[i] == '\0' || cast_s[i] == c)
-		return ((void *)&s[i]);
+		return ((void *)&cast_s[i]);
 	cast_s = 0;
 	return ((void *)cast_s);
 }

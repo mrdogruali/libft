@@ -6,9 +6,11 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 12:05:20 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/07 14:51:13 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:16:12 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, t_size_t n)
 {

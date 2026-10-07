@@ -6,33 +6,13 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 15:28:21 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/01 22:13:57 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:40:32 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <unistd.h>
-// #include <stdio.h>
+#include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
-
-// int	main(void)
-// {
-// 	int index = 0;
-// 	char	array1[7];
-// 	char	*array2;
-
-// 	while(index < 2)
-// 	{
-// 		array1[index] = 'a';
-// 		index++;
-// 	}
-// 	array2 = "xxxxx";
-// 	printf("%u\n", ft_strlcat(array1, array2,8));
-// 	printf("%s",array1);
-// 	return (0);
-// }
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+t_size_t	ft_strlcat(char *dest, char *src, t_size_t size)
 {
 	unsigned int	i;
 	unsigned int	i_src;
@@ -52,3 +32,22 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		dest[i + i_src] = '\0';
 	return (i + i_src);
 }
+// #include <unistd.h>
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int index = 0;
+// 	char	array1[7];
+// 	char	*array2;
+
+// 	while(index < 2)
+// 	{
+// 		array1[index] = 'a';
+// 		index++;
+// 	}
+// 	array2 = "xxxxx";
+// 	printf("%u\n", ft_strlcat(array1, array2,8));
+// 	printf("%s",array1);
+// 	return (0);
+// }

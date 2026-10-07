@@ -6,23 +6,20 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 13:52:06 by adogru            #+#    #+#             */
-/*   Updated: 2026/09/28 19:28:48 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:43:27 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(char str)
 {
 	if (str >= 'a' && str <= 'z' )
-	{
-	}
+		return (1);
 	else if (str >= 'A' && str <= 'Z')
-	{
-	}
+		return (1);
 	else
-	{
 		return (0);
-	}
-	return (1);
 }
 
 // #include <unistd.h>

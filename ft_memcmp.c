@@ -6,13 +6,15 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 17:15:26 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/05 19:36:05 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:16:53 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	char_cmp(char c1, char c2);
+#include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, long unsigned int n)
+static int	char_cmp(char c1, char c2);
+
+int	ft_memcmp(const void *s1, const void *s2, t_size_t n)
 {
 	long unsigned int	index;
 	int					buf;
@@ -37,7 +39,7 @@ int	ft_memcmp(const void *s1, const void *s2, long unsigned int n)
 	return (0);
 }
 
-int	char_cmp(char c1, char c2)
+static int	char_cmp(char c1, char c2)
 {
 	if (c1 == '\0' || c2 > c1)
 	{

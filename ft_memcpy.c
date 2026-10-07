@@ -6,9 +6,11 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 13:38:51 by adogru            #+#    #+#             */
-/*   Updated: 2026/09/29 17:21:25 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:17:04 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, const int n)
 {

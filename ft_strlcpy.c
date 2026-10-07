@@ -6,11 +6,13 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 19:37:42 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/01 22:16:10 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 18:17:21 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcpy(char *dst, const char *src, unsigned long dstsiz)
+#include "libft.h"
+
+int	ft_strlcpy(char *dst, const char *src, t_size_t dstsiz)
 {
 	unsigned long	j;
 
