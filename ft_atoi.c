@@ -6,7 +6,7 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 20:41:24 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/07 12:52:52 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/07 13:16:09 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 int	atoi(const char *nptr)
 {
-	int	i;
 	int	min_i;
 	int	total;
 
-	i = 0;
 	min_i = 0;
 	total = 0;
-	while (nptr[i] != '\0' && ((nptr[i] >= 7 && nptr[i] <= 13) || nptr[i] == ' '))
-		i++;
-	while (nptr[i] != '\0' && (nptr[i] == '+' || nptr[i] == '-'))
+	while (*nptr != '\0' && ((*nptr >= 7 && *nptr <= 13) || *nptr == 32))
+		nptr++;
+	while (*nptr != '\0' && (*nptr == '+' || *nptr == '-'))
 	{
-		if (nptr[i] == '-')
+		if (*nptr == '-')
 			min_i++;
-		i++;
+		nptr++;
 	}
-	while (nptr[i] != '\0' && nptr[i] >= '0' && nptr[i] <= '9')
+	while (*nptr != '\0' && *nptr >= '0' && *nptr <= '9')
 	{
-		total = (total * 10) + (nptr[i] - 48);
-		i++;
+		total = (total * 10) + (*nptr - 48);
+		nptr++;
 	}
 	if (min_i % 2 == 1)
 		total = total * -1;
