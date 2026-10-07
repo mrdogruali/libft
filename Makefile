@@ -6,7 +6,7 @@
 #    By: adogru <adogru@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/30 18:09:52 by adogru            #+#    #+#              #
-#    Updated: 2026/10/07 14:43:21 by adogru           ###   ########.fr        #
+#    Updated: 2026/10/07 18:11:57 by adogru           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,8 @@ HEADER = libft.h
 all: $(NAME)
 
 # Link object files to create the executable
-$(TARGET): $(OBJS)
-	$(CC) $(OBJS) -o $(TARGET)
+$(NAME): $(OBJS)
+	$(CC) $(OBJS) -o $(NAME)
 
 # Compile .c files
 ft_isalpha.c: $(HEADER)
@@ -56,7 +56,7 @@ $(NAME): $(OBJS)
 
 # Generic rule for compiling source files to object files
 %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS)  -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
