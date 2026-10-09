@@ -6,7 +6,7 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 14:54:00 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/07 18:21:53 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/09 18:14:00 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int			ft_strncmp(char *s1, char *s2, t_size_t n);
 static int	if_eos(char *s, unsigned int index);
-static int	char_cmp(char c1, char c2);
+static int	char_cmp(unsigned char c1, unsigned char c2);
 
 int	ft_strncmp(char *s1, char *s2, t_size_t n)
 {
@@ -43,7 +43,7 @@ int	ft_strncmp(char *s1, char *s2, t_size_t n)
 	return (0);
 }
 
-static int	char_cmp(char c1, char c2)
+static int	char_cmp(unsigned char c1, unsigned char c2)
 {
 	if (c1 == '\0' || c2 > c1)
 	{
