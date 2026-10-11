@@ -6,11 +6,12 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 19:40:19 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/07 18:17:42 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/11 13:42:56 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <bsd/string.h>
 
 char	*ft_strnstr(const char *big, const char *little, t_size_t len)
 {
@@ -31,7 +32,7 @@ char	*ft_strnstr(const char *big, const char *little, t_size_t len)
 			i_cmp++;
 			if (little[i_fnd] == '\0' )
 			{
-				return ((char *)&big[i]);
+				return ((char *) &big[i]);
 			}
 		}
 		i++;
@@ -43,8 +44,18 @@ char	*ft_strnstr(const char *big, const char *little, t_size_t len)
 // int main ()
 // {
 // 	printf("%s\n",ft_strnstr("aB","B",2));
+// 	printf("%s\n",strnstr("aB","B",2));
+// 	printf("%s\n",ft_strnstr("","B",2));
+// 	printf("%s\n",strnstr("","B",2));
+// 	printf("%s\n",ft_strnstr("aaaB","B",0));
+// 	printf("%s\n",strnstr("aaaB","B",0));
 // 	printf("%s\n",ft_strnstr("aaaaaBaac","Baa",4));
+// 	printf("%s\n",strnstr("aaaaaBaac","Baa",4));
 // 	printf("%s\n",ft_strnstr("aBaac","Baa",4));
+// 	printf("%s\n",strnstr("aBaac","Baa",4));
 // 	printf("%s\n",ft_strnstr("aBsdvf2454","45",10));
+// 	printf("%s\n",strnstr("aBsdvf2454","45",10));
+// 	printf("%s\n",ft_strnstr(NULL,"B",2));
+// 	printf("%s\n",strnstr(NULL,"B",2));
 // 	return (0);
 // }
