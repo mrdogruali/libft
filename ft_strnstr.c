@@ -6,7 +6,7 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 19:40:19 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/11 13:42:56 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/11 15:28:18 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strnstr(const char *big, const char *little, t_size_t len)
 	unsigned int	i_cmp;
 
 	i = 0;
+	if (little[i] == '\0')
+		return ((char *) big);
 	while (big[i] != '\0' && i < len)
 	{
 		i_cmp = i;
@@ -41,6 +43,7 @@ char	*ft_strnstr(const char *big, const char *little, t_size_t len)
 }
 
 // #include <stdio.h>
+
 // int main ()
 // {
 // 	printf("%s\n",ft_strnstr("aB","B",2));
@@ -55,7 +58,8 @@ char	*ft_strnstr(const char *big, const char *little, t_size_t len)
 // 	printf("%s\n",strnstr("aBaac","Baa",4));
 // 	printf("%s\n",ft_strnstr("aBsdvf2454","45",10));
 // 	printf("%s\n",strnstr("aBsdvf2454","45",10));
-// 	printf("%s\n",ft_strnstr(NULL,"B",2));
-// 	printf("%s\n",strnstr(NULL,"B",2));
+// 	printf("%s\n",ft_strnstr("B","",2));
+// 	printf("%s\n",strnstr("B","",2));
+
 // 	return (0);
 // }
