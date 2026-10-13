@@ -6,14 +6,13 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 14:54:00 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/09 18:14:00 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/11 14:50:20 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int			ft_strncmp(char *s1, char *s2, t_size_t n);
-static int	if_eos(char *s, unsigned int index);
 static int	char_cmp(unsigned char c1, unsigned char c2);
 
 int	ft_strncmp(char *s1, char *s2, t_size_t n)
@@ -25,9 +24,9 @@ int	ft_strncmp(char *s1, char *s2, t_size_t n)
 	index = 0;
 	while (index < n)
 	{
-		if (if_eos(s1, index) && if_eos(s2, index))
+		if (s1[index] == '\0' && s2[index] == '\0')
 		{
-			return (0);
+			return (1);
 		}
 		buf = char_cmp(s1[index], s2[index]);
 		if (buf != 0)
@@ -59,11 +58,6 @@ static int	char_cmp(unsigned char c1, unsigned char c2)
 	}
 }
 
-static int	if_eos(char *s, unsigned int index)
-{
-	return (s[index] == '\0');
-}
-
 // #include <unistd.h>
 // #include <stdio.h>
 // #include <string.h>
@@ -71,7 +65,7 @@ static int	if_eos(char *s, unsigned int index)
 // 	char	*array1;
 // 	char	*array2;
 // 	array1 = "abcde";
-// 	array2 = "abcf";
+// 	array2 = "abcfe";
 // 	printf("%d\n", strncmp(array1,array2, 4));
 // 	printf("%d\n", ft_strncmp(array1,array2, 4));
 // }
