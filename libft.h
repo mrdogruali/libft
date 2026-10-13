@@ -6,7 +6,7 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/07 13:38:03 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/12 20:43:37 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/13 22:42:07 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,15 @@ void		*ft_memset(void *s, int c, t_size_t n);
 t_size_t	ft_strlen(const char *s);
 char		*ft_strchr(const char *s, int c);
 t_size_t	ft_strlcpy(char *dst, const char *src, t_size_t dstsiz);
-t_size_t	ft_strlcat(char *dest, const char *src, t_size_t size);
+t_size_t	ft_strlcat(char *dest, char *src, t_size_t size);
 int			ft_strncmp(char *s1, char *s2, t_size_t n);
 char		*ft_strnstr(const char *big, const char *little, t_size_t len);
 char		*ft_strrchr(const char *s, int c);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
+void		*ft_calloc(size_t nmemb, size_t size);
+char		*ft_strdup(const char *s);
+char		*ft_strjoin(char const *s1, char const *s2);
 
 char		*ft_substr(char const *s, unsigned int start, t_size_t len);
 
