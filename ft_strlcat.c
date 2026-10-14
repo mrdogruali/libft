@@ -6,7 +6,7 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 15:28:21 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/13 22:00:03 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/14 15:02:46 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,32 +137,3 @@ t_size_t	ft_strlcat(char *dest, char *src, t_size_t size)
 
 // 	return (0);
 // }
-
-t_size_t	ft_strlcpy(char *dst, const char *src, t_size_t dstsiz)
-{
-	t_size_t	j;
-
-	j = 0;
-	if (dstsiz == 0)
-	{
-		while (src[j] != '\0')
-		{
-			j++;
-		}
-		return (j);
-	}
-	else
-	{
-		while (j < dstsiz - 1 && src[j] != '\0')
-		{
-			dst[j] = src[j];
-			j++;
-		}
-		dst[j] = '\0';
-	}
-	while (src[j] != '\0')
-	{
-		j++;
-	}
-	return (j);
-}
