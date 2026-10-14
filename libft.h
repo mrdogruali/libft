@@ -6,7 +6,7 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/07 13:38:03 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/14 18:41:02 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/14 19:50:58 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_strdup(const char *s);
 char		*ft_strjoin(char const *s1, char const *s2);
 void		ft_putchar_fd(char c, int fd);
+void		ft_putstr_fd(char *s, int fd);
 
 char		*ft_substr(char const *s, unsigned int start, t_size_t len);
 
