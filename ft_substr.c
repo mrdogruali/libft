@@ -6,7 +6,7 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 21:32:59 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/13 22:10:34 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/14 22:07:22 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 	size_t	i;
 
+	if (start >= ft_strlen(s))
+	{
+		sub = malloc (2 * sizeof(char));
+		if (sub == NULL)
+			return (NULL);
+		ft_bzero(sub, 1);
+		return (sub);
+	}
 	sub = malloc((len + 1) * sizeof(char));
 	if (sub == NULL)
 		return (NULL);
