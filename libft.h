@@ -6,7 +6,7 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/07 13:38:03 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/13 22:42:07 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/14 18:41:02 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef unsigned long int		t_size_t;
 int			ft_atoi(const char *nptr);
@@ -44,6 +45,7 @@ int			ft_toupper(int c);
 void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_strdup(const char *s);
 char		*ft_strjoin(char const *s1, char const *s2);
+void		ft_putchar_fd(char c, int fd);
 
 char		*ft_substr(char const *s, unsigned int start, t_size_t len);
 
