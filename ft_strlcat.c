@@ -6,11 +6,12 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 15:28:21 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/14 15:02:46 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/17 18:59:54 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 t_size_t	ft_strlcat(char *dest, char *src, t_size_t size)
 {
@@ -31,6 +32,7 @@ t_size_t	ft_strlcat(char *dest, char *src, t_size_t size)
 		return (ft_strlen(src));
 	}
 	i = ft_strlcpy(&dest[i_src + i], src, size - 1);
+	dest[size - 1] = '\0';
 	if (i_src + i == size - 1)
 		return (i_src + i + 1);
 	return (ret_val);
@@ -135,5 +137,12 @@ t_size_t	ft_strlcat(char *dest, char *src, t_size_t size)
 
 // 	printf("diff: %d\n",strcmp(buff7,buff8));
 
+// 	char *a = "pqrs";
+// 	char *b = "abcdefghi";
+// 	ft_strlcat(a, b, 10);
+// 	printf("%s\n",a);
+// 	a = "pqrs";
+// 	strlcat(a, b, 10);
+// 	printf("%s\n",a);
 // 	return (0);
 // }
