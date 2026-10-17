@@ -6,7 +6,7 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 22:13:42 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/16 12:45:21 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/16 16:10:11 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,62 +54,64 @@ char	**ft_split(char const *s, char c)
 		f_ch = l_ch + 1;
 		l_ch = ft_strchr(f_ch + 1, c);
 	}
-	ft_memcpy(splitted[i++], f_ch, l_ch - f_ch);
+	l_ch = malloc(sizeof(f_ch) * (char));
+	ft_strlcpy(l_ch, (const char *) f_ch, ft_strlen())
+	splitted[i++] = l_ch
 	splitted[i] = NULL;
 	return (splitted);
 }
 
-// int main()
-// {
-// 	const char *s = "abcabdckkkkkk";
-// 	char **result;
-// 	char c = 'c';
-// 	char k = 'm';
-// 	int i = 0;
+int main()
+{
+	const char *s = "abcabdckkkkkk";
+	char **result;
+	char c = 'c';
+	char k = 'm';
+	int i = 0;
 
-// 	printf("%lu\n",word_counter(s,c));
+	printf("%lu\n",word_counter(s,c));
 
-// 	result = ft_split(s,c);
+	result = ft_split(s,c);
 
-// 	if(result == NULL)
-// 		return (0);
+	if(result == NULL)
+		return (0);
 
-// 	while (result[i])
-// 	{
-// 		printf("result: %s\n",&result[i][0]);
-// 		i++;
-// 	}
-// 	free(result);
+	while (result[i])
+	{
+		printf("result: %s\n",&result[i][0]);
+		i++;
+	}
+	free(result);
 
-// 	s = "hello!";
-// 	c = ' ';
-// 	result = ft_split(s,c);
+	s = "hello!";
+	c = ' ';
+	result = ft_split(s,c);
 
-// 	if(result == NULL)
-// 		return (0);
+	if(result == NULL)
+		return (0);
 
-// 	i = 0;
-// 	while (result[i])
-// 	{write(1,&k,1);
-// 		printf("result: %s\n",&result[i][0]);
-// 		i++;
-// 	}
+	i = 0;
+	while (result[i])
+	{write(1,&k,1);
+		printf("result: %s\n",&result[i][0]);
+		i++;
+	}
 
-// 	free(result);
+	free(result);
 
-// 	s = "\0aa\0bbb";
-// 	i = 0;
-// 	printf("%lu\n",word_counter(s,c));
+	// s = "\0aa\0bbb";
+	// i = 0;
+	// printf("%lu\n",word_counter(s,c));
 
-// 	result = ft_split(s,c);
+	// result = ft_split(s,c);
 
-// 	if(result == NULL)
-// 		return (0);
+	// if(result == NULL)
+	// 	return (0);
 
-// 	while (result[i])
-// 	{
-// 		printf("result: %s\n",&result[i][0]);
-// 		i++;
-// 	}
-// 	free(result);
-// }
+	// while (result[i])
+	// {
+	// 	printf("result: %s\n",&result[i][0]);
+	// 	i++;
+	// }
+	// free(result);
+}
