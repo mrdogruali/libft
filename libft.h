@@ -6,7 +6,7 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/07 13:38:03 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/14 22:14:12 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/17 14:24:42 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 char		*ft_itoa(int n);
 char		**ft_split(char const *s, char c);
+char		*ft_strtrim(char const *s1, char const *set);
 
 char		*ft_substr(char const *s, unsigned int start, t_size_t len);
 

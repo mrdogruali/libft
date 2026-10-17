@@ -6,7 +6,7 @@
 #    By: adogru <adogru@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/30 18:09:52 by adogru            #+#    #+#              #
-#    Updated: 2026/10/14 22:14:49 by adogru           ###   ########.fr        #
+#    Updated: 2026/10/17 14:24:28 by adogru           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror 
 
 # Source files and Object files
-SRCS = ft_split.c ft_itoa.c ft_putendl_fd.c ft_putstr_fd.c \
+SRCS = ft_strtrim.c ft_split.c ft_itoa.c ft_putendl_fd.c ft_putstr_fd.c \
 ft_putchar_fd.c ft_strjoin.c ft_strlen.c ft_substr.c ft_strdup.c \
 ft_strlcat.c  ft_strnstr.c ft_bzero.c ft_atoi.c   ft_isdigit.c  ft_memcpy.c \
 ft_memset.c ft_isascii.c ft_memmove.c ft_strlcpy.c ft_calloc.c \
