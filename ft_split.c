@@ -6,7 +6,7 @@
 /*   By: adogru <adogru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 22:13:42 by adogru            #+#    #+#             */
-/*   Updated: 2026/10/16 16:10:11 by adogru           ###   ########.fr       */
+/*   Updated: 2026/10/17 17:26:20 by adogru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,50 @@ static t_size_t	word_counter(char const *s, char c)
 {
 	t_size_t	ctr;
 	t_size_t	i;
+	t_size_t	flag;
 
 	i = 0;
+	flag = 0;
 	ctr = 0;
 	while (s[i])
 	{
 		if (s[i] == c)
+		{
+			flag = 0;
+			while (s[i] == c)
+				i++;
+		}
+		else if (flag == 0)
+		{
+			flag++;
 			ctr++;
+		}
 		i++;
 	}
 	return (ctr);
+}
+
+char	**list_initialiser(t_size_t wc)
+{
+	char	**list;
+
+	if (wc == 0)
+		list = malloc(sizeof(char *) * 2);
+	else
+		list = malloc(sizeof(char *) * (wc + 1));
+	return (list);
+}
+
+char	*ignore_splitters(char *l_ch, char c)
+{
+	t_size_t	i;
+
+	i = 0;
+	while (l_ch[i] == c && l_ch[i])
+	{
+		i++;
+	}
+	return (&l_ch[i]);
 }
 
 char	**ft_split(char const *s, char c)
@@ -38,80 +72,89 @@ char	**ft_split(char const *s, char c)
 	t_size_t	i;
 	t_size_t	wc;
 
-	wc = word_counter(s, c);
-	f_ch = (char *) s;
-	l_ch = ft_strchr(s, c);
-	if (wc == 0)
-		splitted = malloc(sizeof(char *) * 2);
-	else
-		splitted = malloc(sizeof(char *) * (wc + 1));
-	if (splitted == NULL || s == NULL)
+	if (s == NULL)
 		return (NULL);
+	wc = word_counter(s, c);
+	splitted = list_initialiser(wc--);
+	if (splitted == NULL)
+		return (NULL);
+	f_ch = ft_strtrim(s, &c);
 	i = 0;
 	while (wc--)
 	{
+		l_ch = ft_strchr(f_ch, c);
 		splitted[i++] = ft_substr(f_ch, 0, (l_ch - f_ch));
-		f_ch = l_ch + 1;
-		l_ch = ft_strchr(f_ch + 1, c);
+		f_ch = ignore_splitters(l_ch, c);
 	}
-	l_ch = malloc(sizeof(f_ch) * (char));
-	ft_strlcpy(l_ch, (const char *) f_ch, ft_strlen())
-	splitted[i++] = l_ch
+	l_ch = ft_strdup(f_ch);
+	splitted[i++] = l_ch;
 	splitted[i] = NULL;
 	return (splitted);
 }
 
-int main()
-{
-	const char *s = "abcabdckkkkkk";
-	char **result;
-	char c = 'c';
-	char k = 'm';
-	int i = 0;
+// int main()
+// {
+// 	const char *s = "abcabdccckkkkkk";
+// 	char **result;
+// 	char c = 'c';
+// //	char k = 'm';
+// 	int i = 0;
+// 	printf("%lu\n",word_counter(s,c));
+// 	result = ft_split(s,c);
+// 	while (result[i])
+// 	{
+// 		printf("result: %s\n",&result[i][0]);
+// 		i++;
+// 	}
+// 	free(result);
 
-	printf("%lu\n",word_counter(s,c));
+// 	s = "   he llo  !  ";
+// 	c = ' ';
+// 	result = ft_split(s,c);
+// 	i = 0;
+// 	while (result[i])
+// 	{
+// 		printf("result: %s\n",&result[i][0]);
+// 		i++;
+// 	}
+// 	free(result);
 
-	result = ft_split(s,c);
+// 	s = "!!hello";
+// 	c = '!';
+// 	printf("%lu\n",word_counter(s,c));
+// 	result = ft_split(s,c);
+// 	if(result == NULL)
+// 		return (0);
+// 	i = 0;
+// 	while (result[i])
+// 	{
+// 		printf("result: %s\n",&result[i][0]);
+// 		i++;
+// 	}
+// 	free(result);
 
-	if(result == NULL)
-		return (0);
+// 	s = "hello!!";
+// 	c = '!';
+// 	printf("%lu\n",word_counter(s,c));
+// 	result = ft_split(s,c);
+// 	i = 0;
+// 	while (result[i])
+// 	{
+// 		printf("result: %s\n",&result[i][0]);
+// 		i++;
+// 	}
+// 	free(result);
 
-	while (result[i])
-	{
-		printf("result: %s\n",&result[i][0]);
-		i++;
-	}
-	free(result);
-
-	s = "hello!";
-	c = ' ';
-	result = ft_split(s,c);
-
-	if(result == NULL)
-		return (0);
-
-	i = 0;
-	while (result[i])
-	{write(1,&k,1);
-		printf("result: %s\n",&result[i][0]);
-		i++;
-	}
-
-	free(result);
-
-	// s = "\0aa\0bbb";
-	// i = 0;
-	// printf("%lu\n",word_counter(s,c));
-
-	// result = ft_split(s,c);
-
-	// if(result == NULL)
-	// 	return (0);
-
-	// while (result[i])
-	// {
-	// 	printf("result: %s\n",&result[i][0]);
-	// 	i++;
-	// }
-	// free(result);
-}
+// 	s = "\0aa\0bbb";
+// 	i = 0;
+// 	printf("%lu\n",word_counter(s,c));
+// 	result = ft_split(s,c);
+// 	if(result == NULL)
+// 		return (0);
+// 	while (result[i])
+// 	{
+// 		printf("result: %s\n",&result[i][0]);
+// 		i++;
+// 	}
+// 	free(result);
+// }
